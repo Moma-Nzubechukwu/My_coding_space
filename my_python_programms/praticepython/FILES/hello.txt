@@ -1,0 +1,17 @@
+Make sure to replace your_home_folder with your computer username. 
+
+For example, my username is asweigart, so I’d enter 'C:\\Users\\asweigart\\
+hello.txt' on Windows.
+Both these commands will open the file in “reading plaintext” mode, 
+or read mode for short. When a file is opened in read mode, Python lets you 
+only read data from the file; you can’t write or modify it in any way. Read 
+mode is the default mode for files you open in Python. But if you don’t want 
+to rely on Python’s defaults, you can explicitly specify the mode by passing 
+the string value 'r' as a second argument to open(). So open('/Users/asweigart/
+hello.txt', 'r') and open('/Users/asweigart/hello.txt') do the same thing.
+The call to open() returns a File object. A File object represents a file on 
+your computer; it is simply another type of value in Python, much like the 
+lists and dictionaries you’re already familiar with. In the previous example, 
+you stored the File object in the variable helloFile. Now, whenever you want 
+to read from or write to the file, you can do so by calling methods on the 
+File object in helloFile.
