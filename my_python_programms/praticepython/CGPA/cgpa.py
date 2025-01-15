@@ -14,7 +14,7 @@ name = 0
 listOfScores = []
 listOfLoad = []
 listOfSubject = []
-course = int(input("enter how many course you want to check"))
+course = int(input("enter how many course you want to check\n"))
 totalUnitLoad = int(input("enter the total unit load you offer\n"))
 for i in range(course):
     subject = input("enter the subject name\n")
