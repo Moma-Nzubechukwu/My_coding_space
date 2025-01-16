@@ -8,19 +8,22 @@ def kash(fan):
     if gam[0] == 'OCCUPIED' or gam[0] == "OCCUPIED\n":
         name = input("occupied would you like to un book this room\n")
         if name == "yes":
-            paswd = input('enter password\n')
-            sam = paswd+'\n'
-            gate = open('ROOM'+fan+"/password", "r")
-            tame = gate.readlines()
+            a = 0
+            while a < 5:
+                paswd = input('enter password (you have only 5 atempts)\n')
+                sam = paswd+'\n'
+                gate = open('ROOM'+fan+"/password", "r")
+                tame = gate.readlines()
+                if paswd == tame[0] or sam == tame[0]:
+                    hight = open('ROOM'+fan+"/status", "w")
+                    gas = hight.write("NOT OCCUPIED")
+                    print("done")
+                    break
+                else:
+                    print("pasword dose notatch")
+                    a = a + 1
         else:
-            return 'no'
-            if paswd == tame[0] or sam == tame[0]:
-                hight = open('ROOM'+fan+"/status", "w")
-                gas = hight.write("NOT OCCUPIED")
-                print("done")
-            else:
-                print("pasword dose notatch")
-                return 'no match'
+            return "no"
     else:
         print('not occupied')
-       return  "not occupied"
+        return "not occupied"

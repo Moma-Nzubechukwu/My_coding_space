@@ -5,7 +5,7 @@ from unbookrom import kash
 
 
 while True:
-    whatYouWant = input("what do you want\n1 to check info \n2 to book a room \n3 to unbook a room\n4 to check available rooms\n")
+    whatYouWant = input("\n\n\n\twhat do you want\n\t1 to check info \n\t2 to book a room \n\t3 to unbook a room\n\t4 to check available rooms\n\t")
 
     if whatYouWant == "1":
         name = input("enter your room number\n")
