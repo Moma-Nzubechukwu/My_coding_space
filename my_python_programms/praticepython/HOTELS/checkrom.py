@@ -3,7 +3,6 @@ def check_room_status(no):
     room = 'ROOM'+no+"/status"
     file = open(room, 'r')
     gash = file.readlines()
-    print(gash[0])
     if gash[0] == 'OCCUPIED' or gash[0] == 'OCCUPIED\n':
         print("occupied")
         return "true"
@@ -14,4 +13,6 @@ def check_room_status(no):
             said = open(room, 'w')
             hi = said.write("OCCUPIED")
             print('you have successfully booked this room')
-            return 'false'
+            return 'yes'
+        elif name == "no":
+            return 'no'
