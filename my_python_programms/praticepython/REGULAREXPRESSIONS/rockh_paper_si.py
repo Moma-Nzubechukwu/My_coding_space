@@ -40,7 +40,7 @@ while True:
         print("You typed an invalid number. You lose!")
     elif user_choice ==0 and computer_choice ==2:
         print("You win!")
-        start_again = input("do you want to play again enter yes or no")
+        start_again = input("do you want to play again? enter yes or no\n")
         start_again = start_again.upper()
         check =  re.compile(r'YES')
         gash = check.search(start_again)
