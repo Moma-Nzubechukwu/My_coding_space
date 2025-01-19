@@ -50,7 +50,7 @@ while True:
             break
     elif computer_choice ==0 and user_choice ==2:
         print("You lose!")
-        start_again = input("do you want to play again enter yes or no")
+        start_again = input("do you want to play again? enter yes or no\n")
         start_again = start_again.upper()
         check =  re.compile(r'YES')
         gash = check.search(start_again)
@@ -60,7 +60,7 @@ while True:
             break
     elif computer_choice >user_choice :
         print("You lose!")
-        start_again = input("do you want to play again enter yes or no")
+        start_again = input("do you want to play again? enter yes or no\n")
         start_again = start_again.upper()
         check =  re.compile(r'YES')
         gash = check.search(start_again)
@@ -70,7 +70,7 @@ while True:
            break
     elif user_choice >computer_choice :
         print("You win!")
-        start_again = input("do you want to play again enter yes or no")
+        start_again = input("do you want to play again? enter yes or no\n")
         start_again = start_again.upper()
         check =  re.compile(r'YES')
         gash = check.search(start_again)
@@ -80,7 +80,7 @@ while True:
            break
     elif computer_choice == user_choice :
         print("It's a draw!..")
-        start_again = input("do you want to play again enter yes or no")
+        start_again = input("do you want to play again? enter yes or no\n")
         start_again = start_again.upper()
         check =  re.compile(r'YES')
         gash = check.search(start_again)
