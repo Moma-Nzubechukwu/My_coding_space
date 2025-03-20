@@ -10,7 +10,7 @@ def kash(fan):
         if name == "yes":
             a = 0
             while a < 5:
-                paswd = input('enter password (you have only 5 atempts)\n')
+                paswd = input('enter password (you have only '+ str(5 - a) + ' atempts)\n')
                 sam = paswd+'\n'
                 gate = open('ROOM'+fan+"/password", "r")
                 tame = gate.readlines()

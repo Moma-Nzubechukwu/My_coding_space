@@ -1,0 +1,8 @@
+Starting budget : ( id 86316 ) 5000
+Date : ( id 86316 ) 12-12-2025
+Purchases : (  id 86316 ) , framc
+Total price :  ( id 86316 ) 0
+end budget :  ( id 86316 ) 5000
+
+
+

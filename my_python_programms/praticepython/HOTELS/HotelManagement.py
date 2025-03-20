@@ -6,10 +6,14 @@ from unbookrom import kash
 
 
 while True:
-    whatYouWant = input("\n\n\n\twhat do you want\n\t1 to check info \n\t2 to book a room \n\t3 to unbook a room\n\t4 to check available rooms\n\t")
+    whatYouWant = input("\n\n\n\twhat do you want\n\t1 to check info \n\t2 to book a room \n\t3 to unbook a room\n\t4 to check available rooms\n\t5 to exit\n\t")
 
     if whatYouWant == "1":
-        name = input("enter your room number\n")
+        name = int(input("enter your room number(from room i1 to 36)\n"))
+        if name not in range(1, 36):
+            print('room dose not exist')
+            continue
+        name = str(name)
         print("what do you want to check for in Room", name, '\n')
         tame = input()
         yath = getInfo(name, tame)
@@ -50,3 +54,5 @@ while True:
         kash(name)
     elif whatYouWant == '4':
         check_av()    
+    elif whatYouWant == '5':
+        break

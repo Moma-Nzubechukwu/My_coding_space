@@ -1,4 +1,4 @@
-
+from occupants_details import occupantInfo
 def check_room_status(no):
     room = 'ROOM'+no+"/status"
     file = open(room, 'r')
@@ -11,7 +11,11 @@ def check_room_status(no):
         name = input('enter yes or no')
         if name == "yes":
             said = open(room, 'w')
+            name = input("Enter name\n")
+            phoneno = input("Enter yoir phome number")
+            occupantInfo(no, name, phoneno)
             hi = said.write("OCCUPIED")
+
             print('you have successfully booked this room')
             return 'yes'
         elif name == "no":
