@@ -1,6 +1,7 @@
+# a regex that cjecks for isbn 
 import re
 
-isbn = input("isbn")
+isbn = input("ISBN\n")
 
 myregexe = re.compile(r'\d\d\d-\d\d\d-\d\d\d-\d\d\d-\d')
 mo = myregexe.search(isbn)

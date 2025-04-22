@@ -1,3 +1,4 @@
+# a rock paper and scissors game given to me by joshua and edited by mre added rwgex to it
 import random
 import re
 rock='''

@@ -1,3 +1,4 @@
+#another atempt to make a regular expression
 name = 'gash'
 whatToCheck = 'gash        kdgash'
 

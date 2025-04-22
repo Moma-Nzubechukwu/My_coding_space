@@ -1,3 +1,4 @@
+#regex given by chatgpt
 # Specify the file name and the string to search for
 file_name = "example.txt"
 search_string = "Namtes"

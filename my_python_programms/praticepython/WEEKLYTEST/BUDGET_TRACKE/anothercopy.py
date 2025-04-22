@@ -1,4 +1,7 @@
 import random
+"""
+a file that prints the content af a dictonary whose valies are lists
+"""
 
 montOfYear = {'01': ["JANUARY", "JAN"],
         '02' : ["FEBUARY", "FEB"],

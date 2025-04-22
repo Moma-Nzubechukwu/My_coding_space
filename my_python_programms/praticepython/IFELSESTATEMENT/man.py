@@ -1,4 +1,4 @@
-
+# a space remover script
 
 
 # moma  mzube
