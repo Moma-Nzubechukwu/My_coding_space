@@ -1,6 +1,6 @@
 
 
 
+kill = print("")
+print(kill)
 
-
-print(r"i am \\")

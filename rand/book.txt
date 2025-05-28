@@ -1,0 +1,1152 @@
+Amplifiers 
+
+An ideal amplifier is a two-port circuit that takes an input signal  and reproduces it exactly at its output, only with a larger magnitude!
+
+
+
+
+
+
+
+
+
+
+
+
+
+The real value  is the open-circuit voltage gain of this ideal amplifier, and has a magnitude much larger than unity ().
+	
+
+
+We actually can find g(t) !
+
+Now, lets express this result using our knowledge of linear circuit theory!
+
+Recall, the output of a linear device can be determined by convolving its input  with the device impulse response :
+
+
+
+Q: Yikes! What is the impulse response of this ideal amp?  How can we determine it?
+
+A:  Its actually quite simple! 
+
+Remember, the impulse response of linear circuit is just the output that results when the input is an impulse function .
+Every function an Eigen function
+
+
+Since the output of an ideal amplifier is just the input multiplied by , we conclude if :
+
+
+Thus:
+
+(  Any and every function  is an Eigen function of an ideal amplifier!!
+
+
+And now the Eigen value
+
+Now, we can determine the Eigen value of this linear operator relating input to output:
+
+
+
+
+Recall this Eigen value is found from the Fourier transform of the impulse response:
+
+
+
+
+This result, although simple, has an interesting interpretation  
+
+DC to daylight
+
+it means that the amplifier exhibits gain of Avo for sinusoidal signals of any and all frequencies!  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BUT, there is one big problem with an ideal amplifier:
+
+They are impossible to build!!
+
+Real amplifier have finite bandwidths
+
+The ideal amplifier has a frequency response of . 
+
+ Note this means that the amplifier gain is Avo for all frequencies   (D.C. to daylight!).  
+
+The bandwidth of the ideal amplifier is therefore infinite!
+
+*	Since every electronic device will exhibit some amount of inductance, capacitance, and resistance, every device will have a finite bandwidth.
+
+*	In other words, there will be frequencies w where the device does not work!
+
+*	From the standpoint of an amplifier, not working means  (i.e., low gain).
+
+(   Amplifiers therefore have finite bandwidths.
+Amplifier bandwidth
+
+There is a range of frequencies  between  where the gain will (approximately) be Avo.  
+
+For frequencies outside this range, the gain will typically be small (i.e. ):
+
+
+The width of this frequency range is called the amplifier bandwidth:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wideband is desirable
+
+One result of a finite bandwidth is that the amplifier impulse response is not an impulse function !
+
+
+
+therefore generally speaking:
+
+ !!
+
+However, if an input signal spectrum  lies completely within the amplifier bandwidth, then we find that will (approximately) behave like an ideal amplifier:
+
+
+    if   is within the amplifier bandwidth
+
+
+As a result, maximizing the bandwidth of an amplifier is a typically and important design goal!
+
+
+Analysis of the Inverting Amplifier
+
+Consider an inverting amplifier:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Note that we use here the new notation  and   .
+
+Now what is the open-circuit voltage gain of this inverting amplifier?
+
+Lets start the analysis by writing down all that we know.  First, the op-amp equation:
+
+
+
+Since the non-inverting terminal is grounded (i.e., v+ =0):
+
+
+
+Now lets apply our circuit knowledge to the remainder of the amplifier circuit.  For example, we can use KCL to determine that:
+
+
+However, we know that the input current i-  of an ideal op-amp is zero, as the input resistance is infinitely large.
+
+Thus, we reach the conclusion that:
+
+
+
+Likewise, we know from Ohms Law:
+
+
+and also that:
+
+And so combining:
+
+
+
+
+
+Finally, from KCL we can conclude:
+
+
+
+In other words, we start at a potential of  volts (with respect to ground), we drop a potential of  volts, and now we are at a potential of  volts (with respect to ground). 
+
+
+
+
+
+
+
+
+
+
+
+
+Likewise, we start at a potential of of  volts (with respect to ground), we drop a potential of  volts, and now we are at a potential of  volts (with respect to ground).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Combining these last three equations, we find:
+
+
+
+Now rearranging, we get what is known as the feed-back equation:
+
+
+
+Note the feed-back equation relates  in terms of output .
+
+We  can combine this feed-back equation with the op-amp equation:
+
+
+This op-amp equation is likewise referred to as the feed-forward equation.  Note this equation relates the output  in terms of .
+
+We can combine the feed-back and feed-forward equations to determine an expression involving only input voltage vin  and output voltage :
+
+
+
+Rearranging this expression, we can determine the output voltage  in terms of input voltage vin  .
+
+
+
+and thus the open-circuit voltage gain of the inverting amplifier is:
+
+
+Recall that the voltage gain A of an ideal op-amp is very largeapproaching infinity.  Thus the open-circuit voltage gain of the inverting amplifier is:
+
+
+
+Summarizing, we find that for the inverting  amplifier:
+
+
+
+
+
+
+
+One last thing.  Lets use this final result to determine the value of v-, the voltage at the inverting terminal of the op-amp.
+
+Recall:
+
+
+Inserting the equation:
+
+
+we find:
+
+
+The voltage at the inverting terminal of the op-amp is zero!
+
+Thus, since the non-inverting terminal is grounded (v2 =0), we find that:
+
+
+Recall that this should not surprise us, as we know that if op-amp gain Aop is infinitely large, its output  will also be infinitely large (can you say saturation?), unless v+ - v-  is infinitely small.
+
+We find that the actual value of v+ - v- to be:
+
+
+
+a number which approaches zero as !
+
+
+
+
+
+
+The Non-Inverting Configuration
+
+
+
+
+
+
+
+
+
+The inverting input (v+) of this configuration is not at virtual ground (i.e., )!
+Recall that v- =v+ (the virtual short) ALWAYS for feedback amplifiers.  Notice also that for the circuit above, the voltage at the non-inverting terminal is the input voltage vin :
+
+
+
+We use this fact to analyze this non-inverting configuration. 
+
+First, we use KCL to determine that:
+
+
+
+and since , we again find that:
+
+
+
+and from Ohms Law:
+
+
+
+These results are of course very similar to the expressions we derived when analyzing the inverting configuration.  The main difference is of course that v-  is not equal to zero.  Instead, we know that .  Thus:
+
+
+
+and since , we determine a relationship involving vi and vo only:
+
+
+Performing some simple algebra, we rearrange this expression and find the open-circuit voltage gain of the non-inverting configuration:
+
+
+
+
+
+Note that the open-circuit voltage gain for this configuration is a positive number.  We conclude then that the input and output voltage will have the same sign (i.e.,).  
+
+This is why we call the configuration non-inverting.
+
+
+The Voltage Follower
+
+The voltage follower has a open-circuit voltage gain  --with the result that !
+	
+
+
+
+
+
+
+
+
+
+Q:The output voltage is equal to the input voltage?! Why even?  
+
+A:  To see why the voltage follower is important, consider the following example.  Say you have toiled for hours to design and build the following audio amplifier:
+
+
+
+
+
+
+
+
+
+
+
+
+
+Great gain!  .
+Q: Why this much gain?
+A:  Actually, if we connected this amplifier directly to a speaker, nothing would happen—silence!
+Q Why?
+A:  The reason for this is that the resistance of most speakers is very small (4 -8) We can use the linear equivalent circuit model of the audio amplifier to analyze the result:
+
+
+
+
+
+
+
+
+
+
+The output of this amplifier is even smaller than its input!
+
+The problem, of course, is not that the open-circuit voltage gain is too small—after all, it’s –200!
+
+The problem is that the amplifier output resistance (Rout = 377) is much larger than the load resistance RL= 4 .
+
+Therefore, we have tremendous loss due to the resulting voltage divider:
+
+
+There is a solution to this problem—use a voltage follower!
+
+i.e.,
+
+
+
+
+
+
+
+
+
+
+Let’s again use the linear equivalent model to analyze this circuit and find the output voltage vout.
+
+
+
+
+
+
+
+
+
+
+Note:
+
+1.  Instead of 4, the audio amp “sees” a load of , the input resistance of the voltage follower—this is ideal!
+
+2.  Instead of 377, the speaker “sees” a source resistance of 0, the output resistance of the voltage follower—this too is ideal!
+
+Superposition and Op-Amp Circuits
+
+Consider this op-amp circuit, with two input voltages (v1 and v2):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apply superpostion 
+
+The easiest way to analyze this circuit is to apply superposition!  Recall that op-amp circuits are linear, so superposition applies.
+
+Our first step is to set all sources to zero, except v2 in other words, set v1 =0 (connect it to ground potential):
+
+V1 = 0 
+
+Since the current into the non-inverting input of the op-amp is zero (), it is evident that:
+
+
+Likewise, the remainder of the circuit is simply the non-inverting amplifier, where:
+
+
+
+Combining these two equations, we get:
+
+
+
+
+V2 = 0 
+
+Now for the second step.  Turn off all sources except v1 in other words set v2 =0:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+An inverting amp 
+
+It is evident that the since the current into the non-inverting terminal of the op-amp is zero, the voltage v+ is likewise zero.  
+
+Thus, the circuit above is simply an inverting amplifier, where:
+
+
+
+The Final Output Voltage 
+
+There are no more sources in this circuit, so that we can conclude from superposition that the output voltage is the sum of our two, single-source solutions:
+
+
+
+
+
+Note this circuit is effectively a weighted difference amplifier.
+
+
+
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+
+
+
+
+
+Differential and 
+Common-Mode Gain
+
+Recall that in a previous handout, we analyzed this circuit:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Common mode and differential mode 
+
+We found that the output is related to the inputs as:
+
+
+
+
+
+This circuit is a weighted difference amplifier, and typically, it is expressed in terms of its differential gain Ad and common-mode gain Acm.
+
+
+To understand what these gains mean, we must first define the difference signal  and common-mode signal  of two inputs  and .
+Definitions 
+
+The difference, as we might expect, is defined as:
+
+
+
+
+
+whereas the common-mode signal is simply the average of the two inputs:
+
+
+
+
+
+Using these definitions, we can express the two input signals as:
+
+
+
+
+A new way to express the output 
+
+Thus, the differential signal  and the common-mode signal  provide another way to completely specify input signals if you know  and , you know and .
+
+Moreover, we can express the behavior of our differential amplifier in terms of  and .  Inserting these functions into the expression of the amplifier output , we find:
+
+
+
+A more common form 
+
+Thus, we now have an expression for the open-circuit output in the form:
+
+
+
+
+
+
+where:
+
+
+
+
+
+
+
+
+
+Difference amplifiers should have no common-mode gain
+
+Note that each of these gains are open-circuit voltage gains.
+
+
+*  An ideal differential amplifier has zero common-mode gain (i.e., Acm =0)! 
+
+* In other words, the output of an ideal differential amplifier is independent of the common-mode (i.e., average) of the two input signals.  
+
+* We refer to this characteristic as common-mode suppression.
+
+
+Typically, real differential amplifiers exhibit small, but non-zero common mode gain.   
+
+
+Common-Mode Rejection ratio 
+
+The Common-Mode Rejection Ratio (CMRR) is  therefore used to indicate the quality of a differential amplifier:
+
+
+
+Note the CMRR of a good differential amplifier is very large (e.g., > 40 dB).
+
+For our example circuit, we find that the differential and common-mode gain are:
+
+
+
+Common-mode gain depends on design 
+
+The ratio of these two gains is thus:
+
+
+
+and therefore, CMRR is:
+
+
+
+It is evident that for this example, the common-mode gain Acm is minimized, and thus the CMRR is maximized, when:
+
+
+
+so that .
+
+Feedback Amplifiers
+Introduction of Feedback Amplifiers:
+
+The phenomenon of feeding a portion of the output signal back to the input circuit is known as feedback. The effect results in a dependence between the output and the input and an effective control can be obtained in the working of the circuit. Feedback is of two types.
+Positive Feedback
+Negative Feedback
+Positive or regenerate feedback:
+In positive feedback, the feedback energy (voltage or currents), is in phase with the input signal and thus aids it. Positive feedback increases gain of the amplifier also increases distortion, noise and instability.
+Because of these disadvantages, positive feedback is seldom employed in amplifiers. But the positive feedback is used in oscillators.
+
+
+
+
+Positive Feedback
+Negative or Degenerate feedback
+
+In negative feedback, the feedback energy (voltage or current), is out of phase with the input signal and thus opposes it.
+Negative feedback reduces gain of the amplifier. It also reduces distortion, noise and instability.
+This feedback increases bandwidth and improves input and output impedances.
+Due to these advantages, the negative feedback is frequently used in amplifiers.
+Negative Feedback
+
+
+Comparison Between Positive and Negative Feed Back
+
+S.No.
+Negative Feedback
+Positive Feedback
+
+
+1.
+
+2.
+3.
+4.
+5.
+6.
+Feedback energy is out
+phase with their input signal
+Gain of the amplifier decreases
+Gain stability increases
+Noise and distortion decreases.
+Increase the band width Used in amplifiers
+Feedback energy is in phase with the input signal.
+Gain of the amplifier
+increases
+Gain stability decreases
+Noise and distribution increases.
+Decreases bandwidth Used in Oscillators
+
+
+Principle of Feedback Amplifier
+A feedback  amplifier  generally  consists  of  two  parts.  They are the amplifier and the feedback circuit. The feedback circuit usually consists of resistors. The concept of feedback amplifier can be understood from the following figure.
+
+
+Generalized feedback amplifier
+In the above figure, the gain of the amplifier is represented as A. The gain of the amplifier is the ratio of output voltage Vo to the input voltage Vi. The feedback network extracts a voltage Vf = β Vo from
+the output Vo of the amplifier.
+This voltage is subtracted for negative feedback, from the signal voltage Vs. Now,
+Vi=Vs−Vf=Vs−βVo
+
+The quantity β = Vf/Vois called as feedback ratio or feedback fraction. The output Vo must be equal to the input voltage (Vs - βVo) multiplied by the gain A of the amplifier.
+Hence,
+(Vs−βVo)A=Vo 
+AVs−AβVo=Vo 
+AVs=Vo(1+Aβ) 
+Vo/Vs=A/(1+Aβ)
+
+Therefore, the gain of the amplifier with feedback is given by
+Af =A/(1+Aβ) Effect of negative feedback on amplifier performance
+The effect of negative feedback on an amplifier is considered in relation to gain, gain stability, distortion, noise, input/output impedance and bandwidth and gain-bandwidth product.Gain
+The gain of the amplifier with feedback is given by
+
+Af =A/(1+Aβ)
+Hence, gain decreases with feedback.
+Gain Stability
+An important advantage of negative voltage feedback is that the resultant gain of the amplifier can be made independent of transistor parameters or the supply voltage variations,
+Af=A/(1+Aβ)
+For negative voltage feedback in an amplifier to be effective, the designer deliberately makes the product Aβ much greater than unity. Therefore, in the above relation, ‘1’ can be neglected as compared to Aβ and the expression becomes 
+Af = A/(1+Aβ) = 1/β
+It may be seen that the gain now depends only upon feedback fraction, β, i.e., on the characteristics of feedback circuit. As feedback circuit is usually a voltage divider (a resistive network), therefore, it is unaffected by changes in temperature, variations in transistor parameters and frequency. Hence, the gain of the amplifier is extremely stable.
+
+Distortion
+A power amplifier will have non-linear distortion because of large signal variations. The negative feedback reduces the nonlinear distortion. It can be proved mathematically that:
+Df = D/(1+Aβ)
+
+Where D = distortion in amplifier without feedback
+Df	= distortion in amplifier with negative feedback
+It is clear that by applying negative feedback, the distortion is reduced by a factor (1+Aβ)
+Noise 
+There are numbers of sources of noise in an amplifier. The noise N can be reduced by the factor of (1+Aβ), in a similar manner to non-linear distortion, so that the noise with feedback is given by
+Nf = N/(1+Aβ)
+However, if it is necessary to increase the gain to its original level by the addition of another stage, it is quite possible that the overall system will be noisier that it was at the start. If the increase in gain can be accomplished by the adjustment of circuit parameters, a definite reduction in noise will result from the use of negative feedback. 
+Input / Output Impedance 
+The input and output impedances will also improve by a factor of (1+Aβ), based on feedback connection type.
+
+
+Bandwidth and Gain-bandwidth Product
+
+
+
+
+fhf= fh (1+Aβ) flf= fl /(1+Aβ)
+Bandwidth and Gain-bandwidth Product
+
+Each of higher and lower cut-off frequencies will improve by a factor of (1+Aβ). However, gain-bandwidth product remains constant.
+An important piece of information that can be obtained from a frequency response curve is the bandwidth of the amplifier. This refers to the band of frequencies for which the amplifier has a useful gain. Outside this useful band, the gain of the amplifier is considered to be insufficient compared with the gain at the centre of the bandwidth. The bandwidth specified for the voltage amplifiers is the range of frequencies for which the amplifiers gain is greater than 0.707 of the maximum gain Alternatively, decibels are used to indicate gain, the ratio of output to input voltage. The useful bandwidth would be described as extending to those frequencies at which the gain is -3db down compared to the gain at the mid-band frequency.
+
+Feedback in Emitter Follower Amplifier
+Diagram of an emitter follower
+Operation:
+For the emitter follower, the input voltage is applied at base and the resulting a.c. emitter current produces an output voltage (IeRE) across the emitter resistance. This voltage opposes the input voltage, thus providing negative feedback (Voltage series). It is called emitter
+follower because the output voltage follows the input voltage.
+
+The major characteristics of the emitter follower are:
+
+The voltage gain of an emitter follower is close to 1. 
+Relatively high current gain and power gain.
+High input impedance and low output impedance.
+Input and output ac voltages are in phase.
+Classification of Basic Amplifiers
+Amplifiers can be classified broadly as,
+Voltage amplifiers.
+Current amplifiers.
+Transconductance amplifiers.
+Transresistance amplifiers.
+
+
+Voltage Amplifier
+
+Ri >> Rs and Ro << RL
+
+
+Equivalent circuit of voltage amplifier.
+
+Current Amplifier
+Ri << Rs and Ro >> RL
+
+
+
+Equivalent circuit for current amplifier
+Transconductance Amplifier
+
+Ri >> Rs and Ro >> RL
+
+Equivalent circuit for transconductance amplifier
+
+Transresistance Amplifier
+Ri << Rs and Ro << RL
+
+
+Equivalent circuit for transresistance amplifier
+
+
+
+
+
+
+
+
+
+
+Summary
+
+Sl. No.
+Type
+Input
+Output
+Ri
+Ro
+
+1
+Voltage Amplifier
+Voltage
+Voltage
+High
+Low
+
+2
+Current Amplifier
+Current
+Current
+Low
+High
+
+3
+Transconductance
+Amplifier
+Voltage
+Current
+High
+High
+
+4
+Transresistance Amplifier
+Current
+Voltage
+Low
+Low
+
+
+
+Classification of Feedback Amplifiers
+There are four types of feedback,
+
+
+Voltage series feedback.
+Voltage shunt feedback.
+Current shunt feedback.
+Current series feedback
+
+Rif = Ri (1+Aβ)
+ Rof = Ro / (1+Aβ)
+
+
+
+
+
+
+
+Rif = Ri / (1+Aβ)
+ Rof = Ro / (1+Aβ)
+
+Voltage series feedback.	                               Voltage shunt Feedback
+
+
+
+
+Rif = Ri / (1+Aβ) 
+Rof = Ro (1+Aβ)
+Rif = Ri (1+Aβ) 
+Rof = Ro (1+Aβ)
+
+	
+Current Shunt Feedback	                    Current Series Feedback
+
+Effect of feedback on Input Resistance
+
+Voltage shunt Feedback	Current Shunt Feedback
+Rif = Ri / (1+Aβ)	Rif = Ri / (1+Aβ)
+
+Voltage series feedback.	Current series Feedback
+
+Rif = Ri (1+Aβ)	Rif = Ri (1+Aβ)
+Effect of feedback on Output Resistance
+
+Voltage shunt Feedback	Current Shunt Feedback
+
+
+
+
+Rof = Ro / (1+Aβ)
+Rof = Ro (1+Aβ)
+
+
+Voltage series feedback.	                Current series Feedback
+
+Rof = Ro / (1+Aβ)	                         Rof = Ro (1+Aβ)
+
+Summary
+
+Sl. No.
+Type
+Rif
+Rof
+
+1
+Voltage Shunt
+Feedback Amplifier
+Rif = Ri / (1+Aβ)
+Rof = Ro / (1+Aβ)
+
+2
+Current Shunt
+Feedback Amplifier
+Rif = Ri / (1+Aβ)
+Rof = Ro (1+Aβ)
+
+3
+Voltage Series Feedback Amplifier
+Rif = Ri (1+Aβ)
+Rof = Ro / (1+Aβ)
+
+4
+Current Series Feedback Amplifier
+
+Rif = Ri (1+Aβ)
+
+Rof = Ro (1+Aβ)
+
+
+Current shunt feedback.
+
+Equivalent circuit.
+
+Current Series Feedback	                         Voltage Shunt Feedback
+
+
+
+
+Questions and Solutions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14.	Match the following
+
+
+1.	2.
+
+
+
+
+3.	4.
+
+Sol: Trick to remember
+The first term shows how the feedback is taken
+Voltage is measured in parallel (by voltmeter) - Hence 1st term voltage means, the parallel
+connection at the output
+Current is measured in series - Hence 1st term current means series connection at the output. Series connection increases resistance.
+Parallel connection decreases resistance .
+
+Answer: 1
+
+

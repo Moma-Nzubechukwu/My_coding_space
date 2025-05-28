@@ -1,0 +1,103 @@
+Foreword
+My first introduction to robotics came via a phone call
+in 1964. The caller was Fred Terman, the author of
+the world-famous Radio Engineer’s Handbook, who
+was at the time Provost of Stanford University. Dr.
+Terman informed me that a computer science profes-
+sor, John McCarthy, had just been awarded a large
+research grant, part of which required the develop-
+ment of computer-controlled manipulators. Someone
+had suggested to Terman that it would be prudent if
+the mathematically oriented McCarthy had some con-
+tact with mechanical designers. Since I was the only
+one on the Stanford faculty whose specialty was mecha-
+nism design, Terman decided to phone me, even though
+we had never met and I was a young assistant profes-
+sor fresh out of graduate school with only 2 years at
+Stanford.
+Dr. Terman’s phone call led me to a close associa-
+tion with John McCarthy and the Stanford Artificial In-
+telligence Laboratory (SAIL) that he founded. Robotics
+became one of the pillars of my entire academic career,
+and I have maintained my interest in teaching and re-
+searching the subject through to the present day.
+The modern history of robotic manipulation dates
+from the late 1940s when servoed arms were developed
+in connection with master–slave manipulator systems
+used to protect technicians handling nuclear materials.
+Developments in this area have continued to the present
+day. However, in the early 1960s there was very little
+academic or commercial activity in robotics. The first
+academic activity was the thesis of H. A. Ernst, in 1961,
+at MIT. He used a slave arm equipped with touch sen-
+sors, and ran it under computer control. The idea in his
+study was to use the information from the touch sensors
+to guide the arm.
+This was followed by the SAIL project and a simi-
+lar project started by Professor Marvin Minsky at MIT,
+which were the only sizeable academic ventures into
+robotics at that time. There were a few attempts at com-
+mercial manipulators, primarily in connection with part
+production in the automotive industry. In the USA there
+were two different manipulator designs that were being
+experimented with in the auto industry; one came from
+American Machine and Foundry (AMF) and the other
+from Unimation, Inc.
+There were also a few mechanical devices devel-
+oped as hand, leg, and arm prosthetics, and, a bit later,
+some exoskeletal devices to enhance human perfor-
+mance. In those days there were no microprocessors.
+So, these devices were either without computer control,
+Bernard Roth
+Professor of
+Mechanical Engineering
+Stanford University
+or tethered to a remote so-called
+minicomputer, or even a mainframe
+computer.
+Initially, some in the computer
+science community felt that comput-
+ers were powerful enough to con-
+trol any mechanical device and make
+it perform satisfactorily. We quickly
+learned that this was not to be
+the case. We started on a twofold
+track. One was to develop particu-
+lar devices for SAIL, so that hard-
+ware demonstrations and proof-of-
+concept systems were available for
+the fledgling robotics community to
+experiment with. The other track,
+which was more or less moonlighted from the work at
+SAIL, was the development of a basic mechanical sci-
+ence of robotics. I had a strong feeling that a meaningful
+science could be developed, and that it would be best to
+think in terms of general concepts rather than concen-
+trate exclusively on particular devices.
+Fortuitously, it turned out that the two tracks sup-
+ported each other very naturally and, most importantly,
+the right students were interested in doing their re-
+search in this area. Hardware developments proved to
+be specific examples of more general concepts, and the
+students were able to develop both the hardware and the
+theory.
+Originally, we purchased an arm in order to get
+started quickly. A group at Rancho Los Amigos Hos-
+pital, in Los Angeles, was selling a tongue-switch-
+controlled motor-driven exoskeleton arm to assist pa-
+tients without muscular control of their arms. We pur-
+chased one of these, and connected it to a time-shared
+PDP-6 computer. The device was named Butterfin-
+gers; it was our first experimental robot. Several films
+demonstrating visual feedback control, block stacking
+tasks, and obstacle avoidance were made with Butterfin-
+gers as the star performer.
+The first manipulator that we designed on our own
+was known simply as the Hydraulic Arm. As its name
+implies, it was powered by hydraulics. The idea was
+to build a very fast arm. We designed special rotary
+actuators, and the arm worked well. It became the ex-
+perimental platform for testing the first ever dynamic
+analysis and time-optimal control of a robotic arm.
+However, its use was limited since the design speeds
+were much faster than required due to the limitations
