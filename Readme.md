@@ -1,5 +1,5 @@
 my coding projects
-This folder contains some codes i wrot eby my self
+This folder contains some codes i wrote by my self
 contains:
 - python codes
 - c programs
