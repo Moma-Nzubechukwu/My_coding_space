@@ -1,0 +1,5 @@
+python3 -m pip install --upgrade pip
+python3 -m pip install --upgrade pip
+sudo pip install pyperclip
+sudo apt-get install python3-pip
+sudo apt-get install python3-pip
