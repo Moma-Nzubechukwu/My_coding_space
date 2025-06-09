@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Banking App</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .login-screen, .dashboard {
+      width: 360px;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+
+    .login-screen.active, .dashboard.active {
+      display: block;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #8f44fd;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+      border-radius: 20px;
+      padding: 1.5rem;
+      color: white;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .transactions {
+      background: #f5f5f5;
+      border-radius: 15px;
+      padding: 1rem;
+    }
+
+    .transaction-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .graph {
+      height: 100px;
+      margin-bottom: 1rem;
+      background: url('https://www.svgrepo.com/show/384600/graph-growth.svg') center no-repeat;
+      background-size: contain;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-screen active" id="loginScreen">
+    <h2>Bank Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div class="dashboard" id="dashboard">
+    <div style="text-align: right; margin-bottom: 1rem;">
+      <span>👤 user</span>
+    </div>
+    <div class="card">
+      <div>Balance</div>
+      <h2 id="balance">$1000.00</h2>
+    </div>
+    <div class="graph"></div>
+    <div style="margin-bottom: 1rem;">
+      <input type="text" id="amount" placeholder="Enter amount" />
+      <button onclick="deposit()">Deposit</button>
+      <button onclick="withdraw()" style="margin-top: 0.5rem; background: #fc5185;">Withdraw</button>
+    </div>
+    <div class="transactions">
+      <h4>Transactions</h4>
+      <div id="transactionsList"></div>
+    </div>
+  </div>
+
+  <script>
+    let balance = 1000;
+    const transactions = [];
+
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      if (user === "user" && pass === "pass") {
+        document.getElementById("loginScreen").classList.remove("active");
+        document.getElementById("dashboard").classList.add("active");
+      } else {
+        alert("Invalid login");
+      }
+    }
+
+    function updateBalance() {
+      document.getElementById("balance").innerText = `$${balance.toFixed(2)}`;
+    }
+
+    function addTransaction(text) {
+      transactions.unshift(text);
+      const container = document.getElementById("transactionsList");
+      container.innerHTML = transactions.map(t => `<div class='transaction-item'><span>${t}</span></div>`).join("");
+    }
+
+    function deposit() {
+      const amount = parseFloat(document.getElementById("amount").value);
+      if (!isNaN(amount) && amount > 0) {
+        balance += amount;
+        updateBalance();
+        addTransaction(`Deposited $${amount.toFixed(2)}`);
+      }
+    }
+
+    function withdraw() {
+      const amount = parseFloat(document.getElementById("amount").value);
+      if (!isNaN(amount) && amount > 0 && amount <= balance) {
+        balance -= amount;
+        updateBalance();
+        addTransaction(`Withdrew $${amount.toFixed(2)}`);
+      }
+    }
+  </script>
+</body>
+</html>
+
